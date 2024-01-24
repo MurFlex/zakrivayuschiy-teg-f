@@ -9,6 +9,8 @@
 	--weight-text: 465;
 	--weight-title-text: 785;
 	--background-color: dark;
+	--accent-color: #00cc14;
+	--theme-background: #000;
 	--repeating-linear-gradient-color: #000;
 	--linear-gradient-color-from: #007f0c;
 	--linear-gradient-color-to: #004306;
@@ -20,6 +22,8 @@
 	--weight-text: 400;
 	--weight-title-text: 700;
 	--background-color: white;
+	--accent-color: #000;
+	--theme-background: #eee;
 	--repeating-linear-gradient-color: #d3d3d3;
 	--linear-gradient-color-from: #e7e7e7;
 	--linear-gradient-color-to: #1a1a1a;

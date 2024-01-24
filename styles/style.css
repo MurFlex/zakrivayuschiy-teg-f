@@ -49,22 +49,22 @@
 	justify-content: center;
 	margin-block-end: 107px;
 	font-family: 'Press Start 2P';
-	padding: 136px 120.5px 25px 120px;
-	border: 2px solid #00cc14;
-	background-color: #000;
-	color: #00cc14;
+	padding: 136px 0 25px 0;
+	border: 2px solid var(--accent-color);
+	background-color: var(--theme-background);
+	color: var(--accent-color);
 	line-height: normal;
 	text-align: center;
 	text-transform: uppercase;
 }
 
 .header__title {
-	font-size: 65px;
+	font-size: clamp(3.063rem, 2.715rem + 1.497vw, 4.063rem);
 	margin-block-end: 20px;
 }
 
 .header__subtitle {
-	font-size: 23px;
+	font-size: clamp(0.875rem, 0.68rem + 0.842vw, 1.438rem);
 	margin-block-end: 25px;
 }
 
@@ -121,24 +121,27 @@
 	scale: 0;
 	width: 100%;
 	height: 2px;
-	background-color: #00cc14;
+	background-color: var(--accent-color);
 	transition: scale 0.5s, opacity 0.5s ease;
 	transform-origin: left;
 }
 
+.content {
+	inline-size: clamp(23.188rem, 16.138rem + 30.402vw, 43.5rem);
+}
+
 .main {
-	inline-size: 699.5px;
 	display: flex;
 	gap: 54px;
 }
 
 .card {
 	inline-size: 100%;
-	border: 2px solid #00cc14;
+	border: 2px solid var(--accent-color);
 	font-family: Inter;
 	font-variation-settings: 'wght' var(--text-weight);
-	color: #00cc14;
-	background-color: #000;
+	color: var(--accent-color);
+	background-color: var(--theme-background);
 }
 
 .card__title {
@@ -151,8 +154,8 @@
 }
 
 .card__image {
-	border-block-start: 2px solid #00cc14;
-	border-block-end: 2px solid #00cc14;
+	border-block-start: 2px solid var(--accent-color);
+	border-block-end: 2px solid var(--accent-color);
 	object-fit: cover;
 	width: 100%;
 }
@@ -170,7 +173,7 @@
 	inset-block-start: 25px;
 	font-size: 10px;
 	font-weight: 500;
-	color: #00cc14;
+	color: var(--accent-color);
 }
 
 .card__text {
@@ -192,7 +195,7 @@
 	min-inline-size: 130px;
 	padding-block: 9px;
 	line-height: 90%;
-	border: 2px solid #00cc14;
+	border: 2px solid var(--accent-color);
 }
 
 .core {
@@ -211,6 +214,10 @@
 
 .main-body {
 	transition: fill 0.3s linear;
+}
+
+.contour {
+	fill: var(--accent-color);
 }
 
 .like-icon:hover .main-body {
@@ -241,15 +248,6 @@
 .like-icon.is-liked .heart {
 	animation: scale-heart 0.3s 0.1s ease-in alternate;
 	transform-origin: center;
-}
-
-@keyframes scale-heart {
-	from {
-		scale: 1;
-	}
-	to {
-		scale: 1.5;
-	}
 }
 
 .like-icon.is-liked .sparks {
