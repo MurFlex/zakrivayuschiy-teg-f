@@ -15,6 +15,252 @@
 */
 
 .page {
-  min-inline-size: 320px;
-  min-block-size: 100dvb;
+	display: flex;
+	justify-content: start;
+	align-items: center;
+	flex-direction: column;
+	padding-block: 102px;
+	min-inline-size: 320px;
+	min-block-size: 100dvb;
+	font-family: var(--main-font);
+	font-variation-settings: 'wght' var(--text-weight);
+	background-color: var(--background-color);
+	background-image: repeating-linear-gradient(
+			var(--repeating-linear-gradient-color) 0 2px,
+			transparent 2px,
+			transparent 4px
+		),
+		repeating-linear-gradient(
+			var(--repeating-gradient-direction),
+			var(--repeating-linear-gradient-color) 0 2px,
+			transparent 2px,
+			transparent 4px
+		),
+		linear-gradient(
+			var(--linear-gradient-color-from) 0.01%,
+			var(--linear-gradient-color-to)
+		);
+	background-size: cover;
+}
+
+.header {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-block-end: 107px;
+	font-family: 'Press Start 2P';
+	padding: 136px 120.5px 25px 120px;
+	border: 2px solid #00cc14;
+	background-color: #000;
+	color: #00cc14;
+	line-height: normal;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.header__title {
+	font-size: 65px;
+	margin-block-end: 20px;
+}
+
+.header__subtitle {
+	font-size: 23px;
+	margin-block-end: 25px;
+}
+
+.theme-menu__list {
+	display: inline-flex;
+	flex-direction: column;
+	gap: 14px;
+}
+
+.theme-menu__item {
+	text-align: start;
+}
+
+.button {
+	position: relative;
+	font-family: 'Press Start 2P';
+	font-size: 14px;
+	text-transform: inherit;
+	background: none;
+	border: none;
+	padding: 0;
+}
+
+.theme-menu__button:hover,
+.theme-menu__button:focus {
+	opacity: 0.6;
+}
+
+.theme-menu__button:focus {
+	outline: none;
+}
+
+.theme-menu__button:disabled {
+	opacity: 0.6;
+	pointer-events: none;
+}
+
+.theme-menu__button:disabled::before {
+	content: '▶';
+	position: absolute;
+	inset-inline-start: -30px;
+	animation: arrow-move 0.5s ease-in-out infinite alternate;
+}
+
+.theme-menu__button:hover::after {
+	scale: 1;
+}
+
+.theme-menu__button::after {
+	content: '';
+	position: absolute;
+	inset-inline-start: 0;
+	inset-block-end: -3px;
+	scale: 0;
+	width: 100%;
+	height: 2px;
+	background-color: #00cc14;
+	transition: scale 0.5s, opacity 0.5s ease;
+	transform-origin: left;
+}
+
+.main {
+	inline-size: 699.5px;
+	display: flex;
+	gap: 54px;
+}
+
+.card {
+	inline-size: 100%;
+	border: 2px solid #00cc14;
+	font-family: Inter;
+	font-variation-settings: 'wght' var(--text-weight);
+	color: #00cc14;
+	background-color: #000;
+}
+
+.card__title {
+	font-variation-settings: 'wght' var(--title-weight);
+	padding: 3px 10px;
+}
+
+.card__picture-wrap {
+	position: relative;
+}
+
+.card__image {
+	border-block-start: 2px solid #00cc14;
+	border-block-end: 2px solid #00cc14;
+	object-fit: cover;
+	width: 100%;
+}
+
+.card__watermark {
+	position: absolute;
+	z-index: 2;
+	font-family: 'Press Start 2P';
+	-webkit-text-stroke-width: 1;
+	-webkit-text-stroke-color: #eee;
+	opacity: 0.5;
+	text-transform: uppercase;
+	font-size: 14px;
+	inset-inline-end: 25px;
+	inset-block-start: 25px;
+	font-size: 10px;
+	font-weight: 500;
+	color: #00cc14;
+}
+
+.card__text {
+	display: flex;
+	flex-direction: column;
+	gap: 27px;
+	font-size: 18px;
+	padding: 25px 25px 0 25px;
+}
+
+.card__actions {
+	display: flex;
+	justify-content: end;
+	gap: 12px;
+	padding: 25px;
+}
+
+.card__actions-like {
+	min-inline-size: 130px;
+	padding-block: 9px;
+	line-height: 90%;
+	border: 2px solid #00cc14;
+}
+
+.core {
+	transition: fill 0.3s 0.03s linear;
+}
+
+.like-icon:hover .core {
+	fill: red;
+	transition: fill 0.3s linear;
+}
+
+.like-icon:active .core {
+	fill: red;
+	transition: fill 0.3s linear;
+}
+
+.main-body {
+	transition: fill 0.3s linear;
+}
+
+.like-icon:hover .main-body {
+	fill: red;
+	transition: fill 0.3s 0.05s linear;
+}
+
+.like-icon:active .main-body {
+	fill: red;
+	transition: fill 0.3s 0.05s linear;
+}
+
+.like-icon.is-liked .core {
+	fill: red;
+	transition: fill 0.3s linear;
+}
+
+.like-icon.is-liked .main-body {
+	fill: red;
+	transition: fill 0.3s 0.05s linear;
+}
+
+.like-icon.is-liked .contour {
+	fill: red;
+	transition: fill 0.3s 0.06s linear;
+}
+
+.like-icon.is-liked .heart {
+	animation: scale-heart 0.3s 0.1s ease-in alternate;
+	transform-origin: center;
+}
+
+@keyframes scale-heart {
+	from {
+		scale: 1;
+	}
+	to {
+		scale: 1.5;
+	}
+}
+
+.like-icon.is-liked .sparks {
+	animation: opacity-heart 0.3s 0.3s ease-in alternate;
+}
+
+@keyframes opacity-heart {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
 }
