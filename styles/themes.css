@@ -6,8 +6,8 @@
 */
 
 :root.theme-dark {
-	--weight-text: 465;
-	--weight-title-text: 785;
+	--text-weight: 465;
+	--title-weight: 785;
 	--background-color: dark;
 	--accent-color: #00cc14;
 	--theme-background: #000;
@@ -20,8 +20,8 @@
 }
 
 :root.theme-light {
-	--weight-text: 400;
-	--weight-title-text: 700;
+	--text-weight: 400;
+	--title-weight: 700;
 	--background-color: white;
 	--accent-color: #000;
 	--theme-background: #ffffff;
@@ -35,16 +35,16 @@
 
 @media (prefers-color-scheme: light) {
 	:root {
-		--weight-text: 400;
-		--weight-title-text: 700;
-		--background-color: white;
+		--text-weight: 400;
+		--title-weight: 700;
+		--background-color: #ffffff;
 		--accent-color: #000;
-		--theme-background: #eee;
+		--theme-background: #ffffff;
 		--repeating-linear-gradient-color: #d3d3d3;
 		--linear-gradient-color-from: #e7e7e7;
 		--linear-gradient-color-to: #1a1a1a;
 		--repeating-gradient-direction: to right;
 		--linear-gradient-direction: to bottom;
-		--button-color: #eee;
+		--button-color: #ffffff;
 	}
 }
