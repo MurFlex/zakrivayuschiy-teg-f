@@ -16,6 +16,7 @@
 	--linear-gradient-color-to: #004306;
 	--repeating-gradient-direction: to right;
 	--linear-gradient-direction: to bottom;
+	--button-color: #00cc14;
 }
 
 :root.theme-light {
@@ -29,4 +30,5 @@
 	--linear-gradient-color-to: #1a1a1a;
 	--repeating-gradient-direction: to right;
 	--linear-gradient-direction: to bottom;
+	--button-color: #eee;
 }

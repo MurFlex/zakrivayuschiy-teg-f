@@ -28,7 +28,7 @@
 	}
 
 	to {
-		fill: red;
+		fill: var(--heart-color);
 	}
 }
 
