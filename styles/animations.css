@@ -15,10 +15,10 @@
 
 @keyframes arrow-move {
 	from {
-		inset-inline-start: -22px;
+		inset-inline-start: -20px;
 	}
 	to {
-		inset-inline-start: -18px;
+		inset-inline-start: -16px;
 	}
 }
 
