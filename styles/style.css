@@ -209,6 +209,17 @@
 	color: var(--accent-color);
 }
 
+@supports (
+	(text-stroke: 1px var(--theme-background)) or
+		(-webkit-text-stroke: 1px var(--theme-background))
+) {
+	.card__watermark {
+		text-shadow: none;
+		-webkit-text-stroke: 1px var(--theme-background);
+		text-stroke: 1px var(--theme-background);
+	}
+}
+
 .card__text {
 	display: flex;
 	flex-direction: column;
@@ -230,15 +241,12 @@
 	line-height: 90%;
 	border: 2px solid var(--accent-color);
 	cursor: pointer;
+	overflow: hidden;
 }
 
 .card__button:focus {
 	outline: none;
 	box-shadow: 2px 2px 0px 0px #000;
-}
-
-.card__button {
-	overflow: hidden;
 }
 
 .card__button::before {
@@ -299,10 +307,6 @@
 .like-icon:active .core,
 .like-icon:active .main-body {
 	fill: var(--heart-color);
-}
-
-.core {
-	transition: fill 0.3s linear;
 }
 
 .like-icon.is-liked .core,
