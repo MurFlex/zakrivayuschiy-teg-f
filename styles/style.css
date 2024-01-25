@@ -229,11 +229,15 @@
 
 .contour {
 	fill: var(--accent-color);
-	transition: fill 0.3s 0.05s linear;
+}
+
+.sparks {
+	opacity: 0;
 }
 
 .main-body,
-.core {
+.core,
+.sparks {
 	fill: transparent;
 }
 
@@ -241,7 +245,8 @@
 	transition: fill 0.3s linear;
 }
 
-.main-body {
+.main-body,
+.contour {
 	transition: fill 0.3s 0.05s linear;
 }
 
@@ -261,8 +266,13 @@
 
 .like-icon.is-liked .core,
 .like-icon.is-liked .main-body,
-.like-icon.is-liked .contour {
+.like-icon.is-liked .contour,
+.like-icon.is-liked .sparks {
 	fill: var(--heart-color);
+}
+
+.like-icon.is-liked .sparks {
+	animation: sparks-blink 0.3s 0.3s ease-in;
 }
 
 .like-icon.is-liked .heart {
@@ -273,5 +283,23 @@
 .main__save-button {
 	inline-size: clamp(19.125rem, 18.487rem + 2.723vw, 20.938rem);
 	color: var(--accent-color);
-	padding-block: clamp(0.938rem, 0.86rem + 0.329vw, 1.156rem);
+	padding: clamp(0.938rem, 0.86rem + 0.329vw, 1.156rem);
+	background-color: var(--theme-background);
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
 }
+
+/* .main__save-button-text {
+	display: block;
+	margin-block-start: 8px;
+}
+
+@media (width > 375px) {
+	.main__save-button-text {
+		display: inline;
+		margin-block-start: 0;
+	}
+} */

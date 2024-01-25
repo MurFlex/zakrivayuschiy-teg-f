@@ -40,3 +40,12 @@
 		scale: 1.5;
 	}
 }
+
+@keyframes sparks-blink {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}

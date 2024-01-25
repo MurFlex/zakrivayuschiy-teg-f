@@ -32,3 +32,19 @@
 	--linear-gradient-direction: to bottom;
 	--button-color: #eee;
 }
+
+@media (prefers-color-scheme: light) {
+	:root {
+		--weight-text: 400;
+		--weight-title-text: 700;
+		--background-color: white;
+		--accent-color: #000;
+		--theme-background: #eee;
+		--repeating-linear-gradient-color: #d3d3d3;
+		--linear-gradient-color-from: #e7e7e7;
+		--linear-gradient-color-to: #1a1a1a;
+		--repeating-gradient-direction: to right;
+		--linear-gradient-direction: to bottom;
+		--button-color: #eee;
+	}
+}
