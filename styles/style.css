@@ -162,12 +162,39 @@
 	width: 100%;
 }
 
+.card__image_grayscale {
+	filter: grayscale(0.7);
+}
+
+.card__image_saturate {
+	filter: saturate(390%);
+}
+
+.card__image_hue-rotate {
+	filter: hue-rotate(40deg);
+}
+
+.card__image_invert {
+	filter: invert(80%);
+}
+
+.card__image_sepia {
+	filter: sepia(1);
+}
+
+.card__image_blur {
+	filter: blur(7px);
+}
+
+.card__image_hue-rotate-blur {
+	filter: hue-rotate(95deg) blur(1px);
+}
+
 .card__watermark {
 	position: absolute;
 	z-index: 2;
 	font-family: 'Press Start 2P';
 	opacity: 0.5;
-	text-transform: uppercase;
 	font-size: 14px;
 	inset-inline-end: clamp(0.688rem, 0.379rem + 1.315vw, 1.563rem);
 	inset-block-start: clamp(1.438rem, 1.393rem + 0.188vw, 1.563rem);
@@ -193,18 +220,18 @@
 	padding: 25px;
 }
 
-.card__actions-like {
+.card__button {
 	min-inline-size: 130px;
 	padding-block: 9px;
 	line-height: 90%;
 	border: 2px solid var(--accent-color);
 }
 
-.card__like-button {
+.card__button {
 	overflow: hidden;
 }
 
-.card__like-button::before {
+.card__button::before {
 	content: '';
 	position: absolute;
 	top: 0;
@@ -216,7 +243,7 @@
 	translate: -100%;
 }
 
-.card__like-button:hover::before {
+.card__button:hover::before {
 	translate: 0%;
 }
 
@@ -282,7 +309,6 @@
 
 .main__save-button {
 	inline-size: clamp(19.125rem, 18.487rem + 2.723vw, 20.938rem);
-	color: var(--accent-color);
 	padding: clamp(0.938rem, 0.86rem + 0.329vw, 1.156rem);
 	background-color: var(--theme-background);
 	display: flex;
@@ -292,14 +318,38 @@
 	gap: 8px;
 }
 
-/* .main__save-button-text {
-	display: block;
-	margin-block-start: 8px;
+.main__svg {
+	color: var(--button-color);
+	mix-blend-mode: difference;
 }
 
-@media (width > 375px) {
-	.main__save-button-text {
-		display: inline;
-		margin-block-start: 0;
-	}
-} */
+.dialog[open] {
+	display: grid;
+	grid-template-columns: min-content 1fr;
+	grid-template-rows: min-content min-content;
+	row-gap: 30px;
+	column-gap: 20px;
+	inline-size: 341px;
+	font-family: 'Press Start 2P';
+	background-color: var(--theme-background);
+	color: var(--accent-color);
+	font-size: 14px;
+	border: 2px solid var(--accent-color);
+	padding-block: 32px;
+	padding-inline: clamp(2rem, 1.783rem + 0.935vw, 2.625rem);
+	justify-content: center;
+	align-items: center;
+}
+
+.dialog::backdrop {
+	background-color: #000;
+	opacity: 0.75;
+}
+
+.dialog__form {
+	grid-column: span 2;
+}
+
+.dialog__button {
+	inline-size: 100%;
+}
